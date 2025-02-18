@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { FaCaretDown } from "react-icons/fa";
 
-const EditTodo = ({
-  editMode,
-  editValue,
-  setEditValue,
-  updateHandler,
-}) => {
+const EditTodo = ({ editMode, editValue, setEditValue, updateHandler }) => {
   return (
     <Wrapper>
       {editMode && (
@@ -18,7 +14,7 @@ const EditTodo = ({
             onChange={(e) => setEditValue(e.target.value)}
           />
           <span className="edit-symbol" onClick={updateHandler}>
-            🔻
+            <FaCaretDown className="icons" />
           </span>
         </div>
       )}
@@ -49,17 +45,24 @@ const Wrapper = styled.section`
   }
 
   .edit-symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 9px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    margin: 0 10px;
     background-color: gainsboro;
     border: none;
     transition: background-color 0.3s ease-in-out;
     outline: none;
-    font-size: 24px;
-    padding: 3px;
+    font-size: 20px;
+  }
+
+  .icons {
+    font-size: 25px;
+    margin: 0px 10px;
   }
 
   .edit-symbol:hover {

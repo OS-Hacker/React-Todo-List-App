@@ -1,6 +1,8 @@
 import { Alert } from "antd";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDeleteOutline } from "react-icons/md";
 
 const ShowTodos = ({
   todos,
@@ -65,7 +67,7 @@ const ShowTodos = ({
                     deleteTodo(id);
                   }}
                 >
-                  ❌
+                  <MdDeleteOutline className="delete_icons" />
                 </span>
                 <span
                   className="edit-symbol"
@@ -74,7 +76,7 @@ const ShowTodos = ({
                     editToDo(id, text);
                   }}
                 >
-                  ✏️
+                  <FaRegEdit className="edit_icons" />
                 </span>
               </li>
             );
@@ -104,7 +106,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     scroll-behavior: smooth;
     padding: 0;
-    max-height: 41vh;
+    max-height: 45vh;
     min-height: auto;
     overflow-y: auto;
   }
@@ -116,7 +118,7 @@ const Wrapper = styled.section`
     font-family: sans-serif;
     font-size: 18px;
     background-color: aliceblue;
-    padding: 5px;
+    padding: 8px;
     margin: 5px auto;
     border-radius: 8px;
     position: relative;
@@ -126,8 +128,24 @@ const Wrapper = styled.section`
   .delete-symbol,
   .edit-symbol {
     position: absolute;
-    font-size: 18px;
     cursor: pointer;
+  }
+
+  .edit_icons {
+    font-size: 25px;
+    margin: 0px 10px;
+  }
+
+  .edit_icons:hover {
+    color: green;
+  }
+
+  .delete_icons {
+    font-size: 25px;
+  }
+
+  .delete_icons:hover {
+    color: red;
   }
 
   .delete-symbol {
@@ -135,7 +153,7 @@ const Wrapper = styled.section`
   }
 
   .edit-symbol {
-    right: 40px;
+    right: 30px
   }
 
   .AddStyleLi {

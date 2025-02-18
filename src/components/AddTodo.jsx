@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { MdAdd } from "react-icons/md";
 
 const AddTodo = ({
   setInputText,
@@ -48,7 +49,9 @@ const AddTodo = ({
             autoFocus
             autoComplete="off"
           />
-          <button onClick={addHandler}>➕</button>
+          <button onClick={addHandler}>
+            <MdAdd className="icons" />
+          </button>
         </div>
       </div>
     </Wrapper>
@@ -110,6 +113,10 @@ const Wrapper = styled.section`
     transition: all 0.3s ease-in-out;
   }
 
+  .icons {
+    font-size: 25px;
+  }
+
   button {
     width: 40px;
     height: 40px;
@@ -157,8 +164,8 @@ const Wrapper = styled.section`
     }
 
     button {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
     }
   }
 `;
